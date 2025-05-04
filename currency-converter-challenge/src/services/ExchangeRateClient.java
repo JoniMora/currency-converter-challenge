@@ -26,7 +26,7 @@ public class ExchangeRateClient {
         try {
             HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
 
-            System.out.println("JSON recibido:\n" + response.body());
+            //System.out.println("JSON recibido:\n" + response.body());
             return gson.fromJson(response.body(), PairConversion.class);
         } catch (Exception e) {
             throw new RuntimeException("Error al consultar la API: " + e.getMessage(), e);
